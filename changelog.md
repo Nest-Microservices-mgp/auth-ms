@@ -17,4 +17,4 @@
 
 - npm i prisma --save-dev
 - npx prisma init # Esto crea un .env con DATA_URL el cual debemos configurar con la url de Mongo para crear el schema. Y en el archivo de prisma configurar provider = "mongodb" y crear el model "User"
-- npx prisma generate
+- npx prisma generate # Genera los scripts de prisma para usarlos en el proyecto (clases, interfaces, etc. a partir del modelo)
