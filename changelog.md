@@ -23,3 +23,7 @@
 
 - npm i bcrypt
 - npm i --save-dev @types/bcrypt
+
+## Video 139
+
+- npm i --save @nestjs/jwt

@@ -4,6 +4,7 @@ import * as joi from 'joi';
 interface EnvVars {
   PORT: number;
   NATS_SERVERS: string[];
+  JWT_SECRET: string;
 }
 
 const envVarsSchema = joi
@@ -14,6 +15,7 @@ const envVarsSchema = joi
       .items(joi.string().uri())
       .required()
       .default(['nats://localhost:4222']),
+    JWT_SECRET: joi.string().required(),
   })
   .unknown();
 
@@ -28,4 +30,5 @@ if (error) {
 export const envs = {
   port: envVars.PORT,
   natsServers: envVars.NATS_SERVERS,
+  jwtSecret: envVars.JWT_SECRET,
 };
