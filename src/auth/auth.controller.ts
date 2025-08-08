@@ -17,7 +17,7 @@ export class AuthController {
     return this.authService.loginUser(loginUserDto);
   }
   @MessagePattern('auth.validate.user')
-  validateUser() {
-    return 'validateUser';
+  validateUser(@Payload() token: string) {
+    return this.authService.validateToken(token);
   }
 }
